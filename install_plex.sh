@@ -2,8 +2,8 @@
 # This will remove your existing plex installation and upgrade it to the latest version
 # It assumes that plex is installed in $HOME/plex
 
-PLEX_VERSION=plexmediaserver_0.9.15.6.1714-7be11e1_amd64.deb
-PLEX_DOWNLOAD=https://downloads.plex.tv/plex-media-server/0.9.15.6.1714-7be11e1/$PLEX_VERSION
+PLEX_VERSION=plexmediaserver_1.0.0.2261-a17e99e_amd64.deb
+PLEX_DOWNLOAD=https://downloads.plex.tv/plex-media-server/1.0.0.2261-a17e99e/$PLEX_VERSION
 
 # Kill plex before updating
 ps aux | grep -ie plex | awk '{print $2}' | xargs kill -9
@@ -30,3 +30,6 @@ tar -xvzf data.tar.gz
 
 # Remove unnecessary files
 rm *.gz *.deb
+
+# Add the start.sh file
+cp ../start.sh $HOME/plex/usr/lib/plexmediaserver/
